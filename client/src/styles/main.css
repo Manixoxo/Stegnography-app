@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animation classes that need specific transform origins */
+@layer utilities {
+  .bear-wave {
+    animation: wave 2s infinite;
+    transform-origin: 70px 65px;
+  }
+  
+  .bear-peek-arm {
+    animation: peek 2s infinite;
+    transform-origin: 70px 65px;
+  }
+}
+
+/* Animations (these will be used both by Tailwind classes and direct CSS classes) */
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes box-appear {
+  0% { transform: translate-x-8 scale(0); opacity: 0; }
+  70% { transform: translate-x-8 scale(1.1); opacity: 1; }
+  100% { transform: translate-x-8 scale(1); opacity: 1; }
+}
+
+@keyframes box-shake {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(-2deg); }
+  20%, 40%, 60%, 80% { transform: rotate(2deg); }
+}
+
+@keyframes letter-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+@keyframes letter-open {
+  0% { transform: translateY(-20px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.1); }
+  100% { transform: translateY(-20px) scale(1.2); }
+}
+
+@keyframes peek {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-20deg) translateY(-5px); }
+}
+
+/* Animation utility classes */
+.animate-wave {
+  animation: wave 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.animate-box-appear {
+  animation: box-appear 0.5s forwards;
+}
+
+.animate-box-shake {
+  animation: box-shake 0.5s ease-in-out;
+}
+
+.animate-letter-float {
+  animation: letter-float 0.5s forwards;
+}
+
+.animate-letter-open {
+  animation: letter-open 0.5s forwards;
+}
